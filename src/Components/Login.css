@@ -1,0 +1,13 @@
+.app-login {
+  display: flex;
+  justify-content: center;
+}
+
+.app-login .card {
+  margin-top: 200px;
+  max-width: 300px;
+}
+
+.app-login .card img {
+  padding: 3rem;
+}

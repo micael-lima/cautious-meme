@@ -1,0 +1,32 @@
+.message {
+  width: 100%;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.message.sent .message-body {
+  margin-left: auto;
+}
+
+.message.received .message-body {
+  margin-right: auto;
+}
+
+.message-body {
+  background-color: var(--light);
+  padding: 0.5rem;
+  min-width: 150px;
+}
+
+.message img {
+  display: inline-block;
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.message p {
+  display: inline-block;
+  align-self: baseline;
+  margin: 0;
+}

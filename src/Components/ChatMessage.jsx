@@ -1,4 +1,5 @@
 import React from 'react';
+import './ChatMessage.css';
 
 function ChatMessage(props) {
   const {
@@ -12,8 +13,10 @@ function ChatMessage(props) {
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} alt="Avatar do Usuário" />
-      <p><strong>{text}</strong></p>
+      <div className="message-body rounded">
+        <img className="rounded-circle" src={photoURL} alt="Avatar do Usuário" />
+        <p>{text}</p>
+      </div>
     </div>
   );
 }

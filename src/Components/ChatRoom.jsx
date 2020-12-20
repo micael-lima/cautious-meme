@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import './ChatRoom.css';
 import ChatMessage from './ChatMessage';
+import Navbar from './Navbar';
 
 function ChatRoom(props) {
   const [formValue, setFormValue] = useState('');
@@ -11,30 +13,31 @@ function ChatRoom(props) {
   }
 
   return (
-    <div className="container">
-      <p>Usuário: {props.user.email}</p>
-      <button className="btn btn-danger" onClick={props.logout}>
-        Sair
-      </button>
+    <div className="chatroom">
+      <Navbar user={props.user} logout={props.logout} />
 
-      <section>
+      <div className="container-fluid">
+        <section>
         {props.messages &&
           props.messages.map((msg) => <ChatMessage 
                                         key={msg.id} 
                                         message={msg} 
                                         currentUser={ props.user } />)}
-      </section>
+        </section>
+      </div>
 
-      <form onSubmit={ formSubmit }>
-        <input
-          type="text"
-          value={formValue}
-          onChange={(event) => setFormValue(event.target.value)}
-        />
-        <button type="submit" disabled={!formValue}>
-          🚀
-        </button>
-      </form>
+      <div className="container-fluid">
+        <form onSubmit={ formSubmit }>
+          <input
+            type="text"
+            value={formValue}
+            onChange={(event) => setFormValue(event.target.value)}
+          />
+          <button type="submit" disabled={!formValue}>
+            🚀
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
